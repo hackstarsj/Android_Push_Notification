@@ -69,6 +69,10 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
         String channel_id="WEB APP CHANNEL ID";
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent=PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_ONE_SHOT);
+       //For Custom Notification Sound Create a Folder raw in res and Put the file on that folder and pass Here
+       // Uri uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getApplicationContext().getPackageName() + "/" + R.raw.TONEFILE);
+
+        //Default TONE
         Uri uri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder builder=null;
         if(not_type==null) {
